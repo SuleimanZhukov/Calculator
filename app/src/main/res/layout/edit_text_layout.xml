@@ -4,71 +4,63 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingTop="32dp"
+    android:paddingTop="100dp"
     android:paddingBottom="16dp"
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <TextView
+    <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello, Android!"
+        android:layout_gravity="center"
         android:textSize="24sp"
-        android:textColor="#DD2722"
-        android:layout_gravity="center" />
+        android:hint="Insert a text"
+        android:inputType="text"/>
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="Insert a text here"
-        android:textSize="32sp"
         android:layout_gravity="center"
+        android:textSize="24sp"
+        android:hint="Insert a name"
+        android:inputType="textPersonName"
         android:layout_marginTop="20dp"/>
 
-    <LinearLayout
+    <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
         android:layout_gravity="center"
-        android:layout_marginTop="20dp">
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="OK"/>
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Cancel"
-            android:layout_marginLeft="20dp" />
-
-    </LinearLayout>
-
-    <Switch
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Switch"
-        android:layout_gravity="center"
+        android:textSize="24sp"
+        android:hint="Insert a phone number"
+        android:inputType="phone"
         android:layout_marginTop="20dp"/>
 
-    <CheckBox
+    <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Negative Numbers"
         android:layout_gravity="center"
+        android:textSize="24sp"
+        android:hint="Insert a number"
+        android:inputType="number"
         android:layout_marginTop="20dp"/>
 
-    <ToggleButton
+    <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:textSize="24sp"
+        android:hint="Insert a password"
+        android:inputType="textPassword"
         android:layout_marginTop="20dp"/>
 
-    <CalendarView
+    <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:textSize="24sp"
+        android:hint="Insert an email"
+        android:inputType="textEmailAddress"
         android:layout_marginTop="20dp"/>
 
 </LinearLayout>
+
