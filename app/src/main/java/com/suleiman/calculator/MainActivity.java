@@ -3,11 +3,17 @@ package com.suleiman.calculator;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CompoundButton;
+import android.widget.Switch;
 import android.widget.TextView;
+
+import com.google.android.material.button.MaterialButton;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -23,11 +29,17 @@ public class MainActivity extends AppCompatActivity {
     private boolean multi;
     private boolean divide;
 
-    private Button button0;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        if (getIntent().getBooleanExtra(SettingsActivity.KEY_THEME, false)) {
+            setTheme(R.style.Theme_dark_calculator);
+        } else {
+            setTheme(R.style.Theme_calculator);
+        }
+
+
         setContentView(R.layout.activity_main);
 
         init();
@@ -55,7 +67,6 @@ public class MainActivity extends AppCompatActivity {
     private View.OnClickListener clickListener = (view) -> {
         switch (view.getId()) {
             case R.id.button0: {
-                button0.setTextColor(Color.green(1));
                 tvTextField.append("0");
                 break;
             }
@@ -124,6 +135,11 @@ public class MainActivity extends AppCompatActivity {
                 tvTextField.setText(null);
                 break;
             }
+            case R.id.settings_button: {
+                Intent intent = new Intent(this, SettingsActivity.class);
+                startActivity(intent);
+                break;
+            }
         }
     };
 
@@ -133,12 +149,15 @@ public class MainActivity extends AppCompatActivity {
         if (plus) {
             tvResultField.append(" = " + (mFirst + mSecond));
             plus = false;
+
         } else if (minus) {
             tvResultField.append(" = " + (mFirst - mSecond));
             minus = false;
+
         } else if (multi) {
             tvResultField.append(" = " + (mFirst * mSecond));
             multi = false;
+
         } else if (divide) {
             tvResultField.append(" = " + (mFirst / mSecond));
             divide = false;
@@ -150,7 +169,7 @@ public class MainActivity extends AppCompatActivity {
         tvResultField.append(tvTextField.getText().toString());
         mFirst = Float.parseFloat(tvTextField.getText().toString());
         if (symbol.contains("+")) {
-            plus = true;
+             plus= true;
         } else if (symbol.contains("-")) {
             minus = true;
         } else if (symbol.contains("✕")) {
@@ -169,7 +188,7 @@ public class MainActivity extends AppCompatActivity {
     private void init() {
         tvResultField = findViewById(R.id.result_field);
         tvTextField = findViewById(R.id.text_field);
-        button0 = findViewById(R.id.button0);
+        Button button0 = findViewById(R.id.button0);
         Button button1 = findViewById(R.id.button1);
         Button button2 = findViewById(R.id.button2);
         Button button3 = findViewById(R.id.button3);
@@ -186,6 +205,7 @@ public class MainActivity extends AppCompatActivity {
         Button buttonDivide = findViewById(R.id.buttonDivide);
         Button buttonEquals = findViewById(R.id.buttonEquals);
         Button buttonClear = findViewById(R.id.clear);
+        MaterialButton settingsButton = findViewById(R.id.settings_button);
 
         button0.setOnClickListener(clickListener);
         button1.setOnClickListener(clickListener);
@@ -204,5 +224,6 @@ public class MainActivity extends AppCompatActivity {
         buttonDivide.setOnClickListener(clickListener);
         buttonEquals.setOnClickListener(clickListener);
         buttonClear.setOnClickListener(clickListener);
+        settingsButton.setOnClickListener(clickListener);
     }
 }

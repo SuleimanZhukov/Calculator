@@ -20,4 +20,6 @@
     <string name="button_plus">+</string>
 
     <string name="button_clear">C</string>
+    <string name="settings_button_text">Settings</string>
+    <string name="dark_theme_switch_text">Dark Theme</string>
 </resources>
