@@ -3,6 +3,7 @@ package com.suleiman.calculator;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -21,6 +22,8 @@ public class MainActivity extends AppCompatActivity {
     private boolean minus;
     private boolean multi;
     private boolean divide;
+
+    private Button button0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +55,7 @@ public class MainActivity extends AppCompatActivity {
     private View.OnClickListener clickListener = (view) -> {
         switch (view.getId()) {
             case R.id.button0: {
+                button0.setTextColor(Color.green(1));
                 tvTextField.append("0");
                 break;
             }
@@ -165,7 +169,7 @@ public class MainActivity extends AppCompatActivity {
     private void init() {
         tvResultField = findViewById(R.id.result_field);
         tvTextField = findViewById(R.id.text_field);
-        Button button0 = findViewById(R.id.button0);
+        button0 = findViewById(R.id.button0);
         Button button1 = findViewById(R.id.button1);
         Button button2 = findViewById(R.id.button2);
         Button button3 = findViewById(R.id.button3);
