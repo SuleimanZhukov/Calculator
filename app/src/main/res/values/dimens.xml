@@ -29,6 +29,8 @@
     <dimen name="text_field_margin_bottom">150dp</dimen>
     <dimen name="result_field_margin_top">260dp</dimen>
     <dimen name="include_layout_width_height">350dp</dimen>
+    <dimen name="dark_theme_switch_text_size">24sp</dimen>
+    <dimen name="dark_theme_switch_margin_top">20dp</dimen>
     <!--    landscape_view-->
 
 </resources>

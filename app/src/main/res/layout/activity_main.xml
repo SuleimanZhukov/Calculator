@@ -4,40 +4,35 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:background="@drawable/backgorund_image">
+    tools:context=".MainActivity">
 
     <TextView
         android:id="@+id/text_field"
         android:layout_width="match_parent"
         android:layout_height="@dimen/text_field_height"
-        android:layout_marginStart="@dimen/text_views_margins"
-        android:layout_marginEnd="@dimen/text_views_margins"
-        android:gravity="right"
+        android:gravity="left"
         android:textSize="@dimen/text_field_text_size"
+        android:background="@android:color/transparent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.03"
-        style="@style/Suleiman_Style"/>
+        app:layout_constraintVertical_bias="0.154" />
 
     <TextView
         android:id="@+id/result_field"
         android:layout_width="match_parent"
         android:layout_height="@dimen/result_field_height"
-        android:layout_marginStart="@dimen/text_views_margins"
-        android:layout_marginEnd="@dimen/text_views_margins"
-        android:gravity="center"
+        android:gravity="left"
         android:textSize="@dimen/result_field_text_size"
+        android:background="@android:color/transparent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.342"
-        style="@style/Suleiman_Style"/>
+        app:layout_constraintVertical_bias="0.0"/>
 
     <include
         layout="@layout/keyboard_layout"
@@ -60,5 +55,20 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.465" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/settings_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/white"
+        android:text="@string/settings_button_text"
+        android:textSize="@dimen/clear_button_text_size"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.956"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.98" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
